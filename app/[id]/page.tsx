@@ -1,3 +1,5 @@
+import getBillion from "../constants";
+
 interface IParams {
   params: { id: string };
 }
@@ -26,13 +28,6 @@ interface PersonProfile {
   bio: string[];
   about: string[];
   netWorth: number;
-}
-
-export async function getBillion(id: string) {
-  const response = await fetch(
-    `https://billions-api.nomadcoders.workers.dev/person/${id}`
-  );
-  return response.json();
 }
 
 export default async function BillionsDetailPage({ params: { id } }: IParams) {
